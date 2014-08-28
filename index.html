@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Dev Stuff</title>
+
+		<meta name="description" content="Latest techniques and techonologies for fast and efficient software development.">
+		<meta name="author" content="Diogo Souza da Silva">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Dev & Ops</h2>
+          <h1>CNCFLORA</h1>
+					<h3>Como fazemos e mantemos sistemas</h3>
+				</section>
+
+        <section>
+          <h3>Perspectiva:</h3>
+          <h2>Resolvendo problemas.</h2>
+        </section>
+
+        <section>
+          <h3>Problema:</h3>
+          <h4 class='fragment'>Revisar e expandir a lista de espécies ameaçadas de extinção da flora do brasil.</h4>
+          <p class='fragment'>(e mitigar as ameças depois disso)</p>
+          <h3 class='fragment'>Solução:</h3>
+          <p class='fragment'>CNCFlora</p>
+        </section>
+
+        <section>
+          <h3>Como?</h3>
+          <ol>
+            <li class='fragment'>Flora do Brasil</li>
+            <li class='fragment'>Trabalho do CNCFlora</li>
+            <li class='fragment'>Lista de espécies ameaças de extinção</li>
+            <li class='fragment'>Planejamento de ações de conservação</li>
+          </ol>
+        </section>
+
+        <section>
+          <p>(ultimo slide sem tecnologia)</p>
+          <h3>Como, de verdade?</h3>
+          <ol>
+            <li class='fragment'>Flora do Brasil</li>
+            <li class='fragment'>Recorte da flora</li>
+            <li class='fragment'>Registros de ocorrências</li>
+            <li class='fragment'>Bibliografia</li>
+            <li class='fragment'>Imagens</li>
+            <li class='fragment'>Consolidação dos dados</li>
+            <li class='fragment'>Análises geoespaciais</li>
+            <li class='fragment'>Validação dos dados</li>
+            <li class='fragment'>Revisão</li>
+            <li class='fragment'>Publicação</li>
+            <li class='fragment'>Planejamento</li>
+            <li class='fragment'>...</li>
+            <li class='fragment'>Loop</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Façamos sistemas!</h2>
+          <p>No plural, claro...</p>
+        </section>
+
+<!-- 
+        <section>
+          <h3>Problema:</h3>
+          <p>Como fazemos sistemas de forma eficiente e sustentável?</p>
+        </section>
+
+        <section>
+            <p>INSERT NICE IMAGE HERE ABOUT PIPELINE</p>
+      </section>
+-->
+
+        <section>
+          <h3>Problema:</h3>
+          <p>Como organizar esses sitemas, de forma eficiente de criar e manter?</p>
+        </section>
+
+        <section>
+          <section>
+            <h3>Estilo Arquitetural</h3>
+            <h2>Micro Serviços</h2>
+          </section>
+          <section>
+            <p>É como <i>encapsulamento</i>(de OO), mas para sistemas inteiros.</p>
+            <p class='fragment'>Martin Fowler explica melhor:</p>
+            <blockquote class='fragment'>
+              A component is a unit of software that is independently replaceable and upgradeable.
+            </blockquote>
+            <blockquote class='fragment'>
+              Their Primary way of componentizing (...) software is by breaking it down into services.
+            </blockquote>
+            <blockquote class='fragment'>
+              Services are independently deployable.
+            </blockquote>
+            <blockquote class='fragment'>
+              Services are out-of-process components who communicate with a mechanism such as a web service request.
+            </blockquote>
+          </section>
+          <section>
+          <img src="images/micro-services.png" alt="decentralized-data" />
+          </section>
+          <section>
+            <h2>Acrescenta a arquitetura:</h2>
+            <h3>Programação poliglota</h3>
+            <h3>Persistência poliglota</h3>
+            <h3>Melhor ferramenta para cada serviço</h3>
+          </section>
+          <section>
+            <h2>Pressão para DevOps:</h2>
+            <h3>Automação</h3>
+            <h3>Monitoramento</h3>
+            <h3>Provisionamento</h3>
+            <h3>Entregas rápidas</h3>
+            <h3></h3>
+          </section>
+        </section>
+
+        <section>
+          <h3>Problema:</h3>
+          <p>Como fazer esses serviços se comunicarem entre si e com o mundo?</p>
+        </section>
+
+        <section>
+          <section>
+            <h3>Estilo Arquitetural</h3>
+            <h2>REST</h2>
+          </section>
+          <section>
+            <h2>REST</h2>
+            <ul>
+              <li>REpresentational</li>
+              <li>State</li>
+              <li>Transfer</li>
+            </ul>
+            <p>&nbsp;</p>
+            <p class="fragment">a.k.a: <strong>WEB</strong></p>
+          </section>
+          <section>
+            <h3 ><strong>Resumindo</strong></h3>
+            <p >Da tese de Roy Fielding:</p>
+            <ul>
+              <li>Client-Server</li>
+              <li>Cache(able)</li>
+              <li>Stateless</li>
+              <li>Uniform Interface</li>
+              <li>Layered Systems</li>
+              <li><s>Code on-Demand</s></li>
+            </ul>
+          </section>
+          <section>
+            <h3>Na prática: <strong>HTTP</strong></h3>
+            <ul>
+              <li class='fragment'>Bom uso dos headers</li>
+              <li class='fragment'>Stateless</li>
+              <li class='fragment'>Cacheable (E-Tags)</li>
+              <li class="fragment">URI como identificador e localizador uniforme</li>
+              <li class='fragment'>Verbos como ações (GET, POST, PUT...)</li>
+              <li class='fragment'>Formatos (content-types): 
+                <ul>
+                  <li><strong>HTML</strong></li>
+                  <li><strong>JSON</strong></li>
+                  <li>XML</li>
+                  <li>CSV</li>
+                </ul>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h3>Problema:</h3>
+          <p>Como trabalhar em times?</p>
+          <ul class='fragment'>
+            <li>E garantir a sincronia do código</li>
+            <li>E não perder código</li>
+            <li>E ter acesso a código antigo</li>
+            <li>E por ai vai...</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h2>GIT</h2>
+            <img src="images/github.png" alt="GitHub" />
+          </section>
+          <section>
+            <h3>Resolve</h3>
+            <ul>
+              <li>Quem tem a ultima versão do código?</li>
+              <li>Quem alterou essa linha?</li>
+              <li>Qual a diferença entre essas versões?</li>
+              <li>Como acessar o código do sistema?</li>
+              <li>Como colaborar com o sistema?</li>
+              <li>Quero testar uma coisa diferente aqui.</li>
+              <li>E muito mais...</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h3>Problema:</h3>
+          <p>Com qual linguagem vamos desenvolver?</p>
+        </section>
+
+        <section>
+          <h2>Várias!</h2>
+          <p>Lembre-se: <strong>Programação poliglota</strong> e <strong>usar a melhor ferramenta para cada caso</strong>.</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>PHP</h2>
+            <img src="images/php.png" alt="PHP" />
+            <h3>A linguagem da Web!</h3>
+          </section>
+          <section>
+            <h3>Prós</h3>
+            <ul>
+              <li class='fragment'>Eu sei</li>
+              <li class='fragment'>Você sabe</li>
+              <li class='fragment'>Todo programador sabe</li>
+              <li class='fragment'>Wordpress, Drupal, Symfony, Facebook...</li>
+              <li class='fragment'>Se modernizou bem ultimamente</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Contras</h3>
+            <ul>
+              <li class='fragment'>Ainda há imaturidade na comunidade</li>
+              <li class='fragment'>Muito fácil fazer bagunça</li>
+              <li class="fragment">Requer disciplina</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Como usar atualmente:</h3>
+            <ul>
+              <!--
+              <li>PHP5.6</li>
+              -->
+              <li>Namespaces e classes e PDO</li>
+              <li>Composer</li>
+              <li>PHPUnit ou SimpleTest</li>
+              <li>Behat (BDD)</li>
+              <li>Componentes Symfony ou Zend</li>
+              <li>Ou Lavarel ou o Slim</li>
+              <li>Templates mustache (ou outro)</li>
+              <li>PHPTheRightWay.com</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Ruby</h2>
+            <img src="images/ruby.png" alt="ruby" />
+            <h3>A <strong>nova</strong> linguagem da Web!</h3>
+            <p class="fragment"><small>ok, a nova-nova é o nodejs, mas eu não vou citar ele aqui por que ainda não uso:)</small></p>
+          </section>
+          <section>
+            <h3>Prós</h3>
+            <ul>
+              <li class='fragment'>Eu sei</li>
+              <li class="fragment">Muitos dos novos programadores sabem</li>
+              <li class="fragment">É muito fácil de aprender</li>
+              <li class="fragment">É muito fácil de aprender MESMO</li>
+              <li class="fragment">Orientada a objetos de verdade<span class='fragment'><small>(mais que java)</small></span></li>
+              <li class="fragment">Ótima para web</li>
+              <li class="fragment">Muito popular e com muita ferramenta atualizada</li>
+              <li class="fragment">Serve também para tarefas administrativas</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Contras</h3>
+            <ul>
+              <li class="fragment">Não muito padronizada</li>
+              <li class="fragment">Fácil de criar uma bagunça</li>
+              <li class="fragment">Não tão fácil de botar em um servidor web</li>
+              <li class="fragment">E fácil de acabar com a performance (mas não é tão ruim na verdade)</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Como usamos</h3>
+            <ul>
+              <li>2.1</li>
+              <li>Bundler</li>
+              <li>RSpec</li>
+              <li>Sinatra</li>
+              <li>Mustache</li>
+              <li>net &amp; json nativos</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Clojure</h2>
+            <img src="images/clojure.png" alt="lisp" />
+            <h3>Programação funcional na JVM.</h3>
+          </section>
+          <section>
+            <h3>Prós</h3>
+            <ul>
+              <li>JVM e java interop. completo</li>
+              <li>LISP</li>
+              <li>Imutabilidade == previsivel</li>
+              <li>Code is data, data is code</li>
+              <li>Concorrente e paralela</li>
+              <li>Performance de java, se necessário</li>
+              <li>Padronizada, comunidade incrível</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Contras</h3>
+            <ul>
+              <li>Curva de aprendizado ingrime</li>
+              <li>Poucos profissionais no mercado</li>
+              <li>JVM</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Como usamos</h3>
+            <ul>
+              <li>lein</li>
+              <li>midje</li>
+              <li>ring</li>
+              <li>compojure</li>
+              <li>clj-http + data.json</li>
+              <li>jetty + war</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h3>Problema:</h3>
+          <p>Onde persistir os dados?</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>CouchDB</h2>
+            <img src="images/couchdb.png" alt="Relax." />
+          </section>
+          <section>
+            <h3>Caracteristicas</h3>
+            <ul>
+              <li class="fragment">REST</li>
+              <li class="fragment">Schemaless</li>
+              <li class="fragment">Documet-based</li>
+              <li class="fragment">Feed de mudanças</li>
+              <li class='fragment'>Incremental sempre</li>
+              <li class="fragment">Replicação eficiente através de HTTP</li>
+              <li class="fragment">CON: hard/limited to query (map/reduce)</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>ElasticSearch</h2>
+            <img src="images/es.png" alt="You know, for search." />
+            <p>Para todas as necessidades de busca!</p>
+          </section>
+          <section>
+            <h3>Caracteristicas</h3>
+            <ul>
+              <li class="fragment">REST</li>
+              <li class="fragment">Schemaless</li>
+              <li class="fragment">Document-based</li>
+              <li class="fragment">Busca extremamente eficiente</li>
+              <li class="fragment">Rivers: integração com seu BD</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>PostgreSQL</h2>
+            <img src="images/postgresql.jpg" alt="The default SQL DB." />
+            <p>Menção honrosa, não usamos no momento.</p>
+          </section>
+          <section>
+            <h3>Caracteristicas</h3>
+            <ul>
+              <li class="fragment">Relacional: todo mundo sabe</li>
+              <li class="fragment">Muitas ferramentas</li>
+              <li class="fragment">PostGIS!</li>
+              <li class="fragment">hstore/jsonstore</li>
+              <li class="fragment">Foreign Data Wrappers</li>
+              <li class="fragment">Se for usar relacional, use PostgreSQL</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h3>Problema:</h3>
+          <p>Como garantir que tudo isso funciona?</p>
+        </section>
+
+        <section>
+          <h2>TDD</h2>
+          <p>Todo mundo já sabe.</p>
+        </section>
+        <section>
+          <section>
+            <h2><s>TDD</s></h2>
+            <p><s>Todo mundo já sabe.</s></p>
+            <h2>BDD</h2>
+            <p>A maioria sabe: Testes de comportamento (features).</p>
+          </section>
+          <section>
+          <pre ><code>Feature: Open and edit profiles
+
+    Scenario: create profile
+        Given I am on "/specie/Aphelandra longiflora"
+        Then I login as "Diogo", "diogo@cncflora.net", "admin,analyst"
+        And I press "create-btn"
+
+    Scenario: Edit a profile, changes apply and metadata
+        Given I am on "/specie/Aphelandra longiflora"
+        When I login as "Bruno", "bruno@cncflora.net", "analyst", "ACANTHACEAE"
+        And I follow "Editar"
+        Then I should see "Contribuidor(es): [Bruno] ; Diogo"
+        Then I should see "Taxonomic Notes"
+        Then I fill field "textarea[id*='-taxonomicNotes-notes']" with "Hello, notes."
+        And I press "Salvar"
+        Then I should see "Status: open"
+        Then I should see "Notas Taxonômicas"
+        Then I should see "Hello, notes."</code></pre>
+          <p class='fragment'><small>estamos caminhando para isso...</small></p>
+          </section>
+        </section>
+
+        <section>
+          <h3>Problema:</h3>
+          <p>Meu ambiente de devenvolvimento vai ficar um caos!</p>
+          <p><small>ou: mas funciona na minha maquina</small></p>
+          <p><small>ou: alguém tem que configurar o ambiente do bolsista novo...</small></p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Vagrant!</h2>
+            <img src="images/vagrant.png"  />
+            <p>Development environments made easy.</p>
+          </section>
+          <section>
+            <p>Padronização e automação do ambiente de desenvolvimento.</p>
+            <ul>
+              <li>Um arquivo de configuração (Vagrantfile) por projeto</li>
+              <li>Ambiente de dev faz parte do código-fonte agora</li>
+              <li>Entra no controle de versão</li>
+              <li>Replicável e explicável</li>
+              <li>Padronizado</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Vagrantfile</h3>
+            <pre><code>Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/trusty32"
+
+  config.vm.network "private_network", ip: "192.168.50.188"
+
+  config.vm.provision :shell, :inline => "apt-get update && apt-get install openjdk-7-jdk curl git tmux vim htop redis-server -y"
+  config.vm.provision :shell, :inline => "wget https://raw.github.com/technomancy/leiningen/stable/bin/lein -O /usr/bin/lein"
+  config.vm.provision :shell, :inline => "chmod +x /usr/bin/lein"
+end</code></pre>
+            <p class="fragment">isso é código ruby...</p>
+          </section>
+          <section>
+            <h3>Vagrantfile</h3>
+            <pre><code>Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/trusty64"
+
+  config.vm.network "private_network", ip: "192.168.50.10"
+  config.vm.network :forwarded_port, host: 8888, guest: 80, auto_correct: true
+
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 2048
+    v.cpus = 2
+  end
+
+  config.vm.provision "docker" do |d|
+    d.run "coreos/etcd", name: "etcd", args: "-p 8001:80 -p 4001:4001"
+  end
+
+  config.vm.provision "chef_solo" do |chef|
+    chef.add_recipe "apache"
+    chef.add_recipe "couchdb"
+  end
+end</code></pre>
+          </section>
+          <section>
+            <h3>Integra com:</h3>
+            <ul>
+              <li>Shell</li>
+              <li>Puppet</li>
+              <li>Chef</li>
+              <li>Ansible</li>
+              <li>Salt</li>
+              <li>Docker</li>
+              <li>...</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h3>Problema:</h3>
+          <p>Meu ambiente de produção vai ficar um caos!</p>
+          <p><small>ou: não tenho tanto servidor assim...</small></p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Docker</h2>
+            <img src="images/docker.png" alt="production env as code" />
+            <p>Build, ship and run!</p>
+            <p class="fragment"><small>vagrant para produção</small></p>
+          </section>
+          <section>
+            <h3>Caracteristicas</h3>
+            <ul>
+              <li>Um arquivo Dockerfile por projeto</li>
+              <li>Ambiente de produção faz parte do código</li>
+              <li>E entra no controle de versão</li>
+              <li>Equaliza os ambientes, tornando dev, test, homolog prod mais próximos</li>
+              <li>Facilita deploy, integração, testes, homolog...</li>
+              <li>É o GIT para imagens de produção</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Como?</h3>
+            <pre><code>
+# na sua maquina/no servidor de integração
+docker build -t cncflora/profiles . # cria a imagem/container do projeto atual
+docker push cncflora/profiles # envia a imagem criado para o repositório de imagens
+# em produção
+docker pull cncflora/profiles # pega a ultima versão da imagem, de forma incremental
+docker run -d -p 8080 -t cncflora/profiles # executa a imagem em um container
+            </code></pre>
+          </section>
+          <section>
+            <ul>
+              <p>Qualquer servidor, qualquer sistema Linux, funciona igual:</p>
+              <ul>
+                <li class="fragment">Na amazon AWS</li>
+                <li class="fragment">No google compute engine</li>
+                <li class="fragment">No seu VPS favorito</li>
+                <li class="fragment">Na sua VM do vmware, xen</li>
+                <li class="fragment">No openstack, openshift, cloudfoundry</li>
+                <li class="fragment">Basta ser linux recente (kernel >= 3.8)</li>
+              </ul>
+            </ul>
+          </section>
+          <section>
+            <h3>Dockerfile</h3>
+            <pre><code>FROM dockerfile/java
+
+RUN wget http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-runner/9.2.0.M0/jetty-runner-9.2.0.M0.jar -O /root/jetty.jar
+
+ADD target/dwc-services-0.0.4-standalone.war /root/dwc-services.war
+
+EXPOSE 8080
+
+CMD ["java -jar  /root/jetty.jar /root/dwc-services.war"]</code></pre>
+          </section>
+          <section>
+            <h3>Dockerfile</h3>
+            <pre><code>FROM ubuntu:14.04
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install apache2 libapache2-mod-php5 php5 php5-cli php5-curl php5-common php5-sqlite php5-mysql php5-pgsql php5-gd -y 
+
+RUN apt-get install supervisor -y
+RUN mkdir /var/log/supervisord 
+
+RUN a2enmod rewrite 
+
+RUN sed -i -e 's/memory_limit.*/memory_limit=512M/g' /etc/php5/apache2/php.ini && \
+    sed -i -e 's/upload_max_filesize.*/upload_max_filesize=128M/g' /etc/php5/apache2/php.ini && \
+    sed -i -e 's/post_max_size.*/post_max_size=128M/g' /etc/php5/apache2/php.ini && \
+    sed -i -e 's/display_errors.*/display_erros=On/g' /etc/php5/apache2/php.ini
+
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+ENV APACHE_LOCK_DIR /var/lock/apache2
+ENV APACHE_PID_FILE /var/apache2.pid
+ENV PHP_ENV production
+
+ADD default.conf /etc/apache2/sites-available/000-default.conf
+
+ADD supervisord.conf /etc/supervisor/conf.d/apache.conf
+
+ADD vendor /var/www/vendor
+RUN chown www-data.www-data /var/www/vendor -Rf
+
+ADD . /var/www
+RUN chown www-data.www-data /var/www -Rf
+
+EXPOSE 80
+EXPOSE 9001
+
+CMD ["supervisord"]</code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h3>Problema</h3>
+          <p>Tudo isso coloca mais pressão em cima do operacional</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Dev Ops</h2>
+            <p><small>Além do docker.</small></p>
+          </section>
+          <section>
+            <h3>Fig</h3>
+            <pre><code>etcd:
+    image: coreos/etcd
+    name: etcd
+    ports:
+       - "4001:4001"
+logstash:
+    image: diogok/logstash
+    name: logstash
+    ports:
+        - 80
+        - 9514
+datahub:
+    image: cncflora/datahub
+    name: datahub
+    ports:
+        - "80"
+        - "9001"
+    volumes:
+        - "/var/lib/couchdb:/var/lib/couchdb:rw"
+proxy:
+    image: diogok/proxy-docker
+    name: proxy
+    environment:
+        ROOT_APP: "connect"
+    ports:
+        - "80:80"
+        - "9001"
+    links:
+        - "etcd:etcd"
+connect:
+    image: cncflora/connect
+    name: connect
+    ports:
+        - "8080"
+        - "9001"
+    volumes:
+        - "/var/floraconnect:/var/floraconnect:rw"
+    environment:
+        PROXY: "/connect"
+dwc_services:
+    image: cncflora/dwc-services
+    name: dwc_services
+    ports:
+        - "8080"
+        - "9001"
+    environment:
+        PROXY: "/dwc_services"
+floradata:
+    image: cncflora/floradata
+    name: floradata
+    ports:
+        - "80"</code></pre>
+            <p>Orquestra seus containers.</p>
+          </section>
+          <section>
+            <h3>ETCD</h3>
+            <p>Servidor REST de configuração compartilhada.</p>
+            <p>Para saber o que está rodadndo aonde, qual os parametros e etc...</p>
+            <h3>CONFD</h3>
+            <p>Lê os dados do ETCD e atualiza arquivos de configuração.</p>
+          </section>
+          <section>
+            <h3>Nginx</h3>
+            <pre><code>http {
+    server {
+        listen 80;
+
+        # Proxying the connections connections, data come from ETCD
+        <% for @app in @data.values %>
+        location /<%= @app['name'] %>/ {
+            rewrite /<%= @app['name'] %>/(.*) /$1 break;
+            proxy_pass         http://<%= @app['networksettings']['ipaddress'] %>:<%= @app['networksettings']['ports'].keys.first.gsub("/tcp","") %>;
+            proxy_redirect     default;
+            proxy_set_header   Host $host;
+            proxy_set_header   X-Real-IP $remote_addr;
+            proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header   X-Forwarded-Host $server_name;
+        }
+        <% end %>
+    }
+}</code></pre>
+            <p>Atua como proxy para os containers, com dados do confd/etcd.</p>
+          </section>
+          <section>
+            <h3>Supervisord</h3>
+            <img src="images/supervisord.png" />
+            <p>Supervisona, monitora e recolhe logs de aplicações.</p>
+          </section>
+          <section>
+            <h3>Logstash</h3>
+            <img src="images/logstash.png"  />
+            <p>Agrega os logs, indexa e visualiza.</p>
+          </section>
+        </section>
+
+        <section>
+          <h2>Como ficou tudo?</h2>
+        </section>
+
+        <section>
+          <h3>Resumindo o processo</h3>
+          <img src="images/pipeline.png" alt="awesome pipeline" />
+        </section>
+
+        <section>
+          <h3>Resumindo a arquitetura</h3>
+          <img src="images/arch.png" alt="awesome blueprint" />
+        </section>
+
+        <section>
+          <section>
+            <h3>Próximo passo:</h3>
+            <h2><s>Integração contínua</s></h2>
+            <h2>Entrega contínua</h2>
+          </section>
+          <section>
+              <p>INSERT NICE IMAGE HERE ABOUT CD</p>
+              <img src="" alt="" />
+          </section>
+        </section>
+
+				<section>
+					<h2>Links</h2>
+					<ul>
+            <li><a href="http://martinfowler.com/articles/microservices.html">martinfowler.com/articles/microservices.html</a> </li>
+            <li><a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">ics.uci.edu/~fielding/pubs/dissertation/top.htm</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+          <h3> <a href="http://cncflora.jbrj.gov.br">http://cncflora.jbrj.gov.br</a> </h3>
+          <h4> <a href="http://diogok.net">http://diogok.net</a> </h4>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				//theme: 'night', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
