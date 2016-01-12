@@ -44,26 +44,83 @@
 			<div class="slides">
 				<section>
 					<h2>Dev & Ops</h2>
-					<h3>My personal state of art</h3>
+					<h3>Meu "estado da arte" pessoal</h3>
 				</section>
 
         <section>
-          <h3>Context:</h3>
-          <h2>Solving problems.</h2>
+          <h3>Perspectiva:</h3>
+          <h2>Resolvendo problemas.</h2>
+        </section>
+
+<!--
+        <section>
+          <h3>Problema:</h3>
+          <h4 class='fragment'>Revisar e expandir a lista de espécies ameaçadas de extinção da flora do brasil.</h4>
+          <p class='fragment'>(e mitigar as ameças depois disso)</p>
+          <h3 class='fragment'>Solução:</h3>
+          <p class='fragment'>CNCFlora</p>
         </section>
 
         <section>
-          <h3>Problem:</h3>
-          <p>How to organize systems, in a simple maner to create and keep?</p>
+          <h3>Como?</h3>
+          <ol>
+            <li class='fragment'>Flora do Brasil</li>
+            <li class='fragment'>Trabalho do CNCFlora</li>
+            <li class='fragment'>Lista de espécies ameaças de extinção</li>
+            <li class='fragment'>Planejamento de ações de conservação</li>
+          </ol>
+        </section>
+
+        <section>
+          <p>(ultimo slide sem tecnologia)</p>
+          <h3>Como, de verdade?</h3>
+          <ol>
+            <li class='fragment'>Flora do Brasil</li>
+            <li class='fragment'>Recorte da flora</li>
+            <li class='fragment'>Registros de ocorrências</li>
+            <li class='fragment'>Bibliografia</li>
+            <li class='fragment'>Imagens</li>
+            <li class='fragment'>Consolidação dos dados</li>
+            <li class='fragment'>Análises geoespaciais</li>
+            <li class='fragment'>Validação dos dados</li>
+            <li class='fragment'>Revisão</li>
+            <li class='fragment'>Publicação</li>
+            <li class='fragment'>Planejamento</li>
+            <li class='fragment'>...</li>
+            <li class='fragment'>Loop</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Façamos sistemas!</h2>
+          <p>No plural, claro...</p>
+        </section>
+-->
+
+<!-- 
+        <section>
+          <h3>Problema:</h3>
+          <p>Como fazemos sistemas de forma eficiente e sustentável?</p>
+        </section>
+
+        <section>
+            <p>INSERT NICE IMAGE HERE ABOUT PIPELINE</p>
+      </section>
+-->
+
+        <section>
+          <h3>Problema:</h3>
+          <p>Como organizar esses sitemas, de forma eficiente de criar e manter?</p>
         </section>
 
         <section>
           <section>
-            <h3>Architectural style</h3>
-            <h2>Microservices</h2>
+            <h3>Estilo Arquitetural</h3>
+            <h2>Micro Serviços</h2>
           </section>
           <section>
-            <p>Martin Fowler puts it best:</p>
+            <p>É como <i>encapsulamento</i>(de OO), mas para sistemas inteiros.</p>
+            <p class='fragment'>Martin Fowler explica melhor:</p>
             <blockquote class='fragment'>
               A component is a unit of software that is independently replaceable and upgradeable.
             </blockquote>
@@ -81,28 +138,29 @@
           <img src="images/micro-services.png" alt="decentralized-data" />
           </section>
           <section>
-            <h2>Brings to the architecture:</h2>
-            <h3>Polyglot programming</h3>
-            <h3>Polyglot persistence</h3>
-            <h3>Best tool for each job</h3>
+            <h2>Acrescenta a arquitetura:</h2>
+            <h3>Programação poliglota</h3>
+            <h3>Persistência poliglota</h3>
+            <h3>Melhor ferramenta para cada serviço</h3>
           </section>
           <section>
-            <h2>Pressure on the Ops:</h2>
-            <h3>Automation</h3>
-            <h3>Monitoring</h3>
-            <h3>Provisioning</h3>
-            <h3>Fast delivery</h3>
+            <h2>Pressão para DevOps:</h2>
+            <h3>Automação</h3>
+            <h3>Monitoramento</h3>
+            <h3>Provisionamento</h3>
+            <h3>Entregas rápidas</h3>
+            <h3></h3>
           </section>
         </section>
 
         <section>
-          <h3>Problem:</h3>
-          <p>How to make this services communicate with each other and the world?</p>
+          <h3>Problema:</h3>
+          <p>Como fazer esses serviços se comunicarem entre si e com o mundo?</p>
         </section>
 
         <section>
           <section>
-            <h3>Archtectural style</h3>
+            <h3>Estilo Arquitetural</h3>
             <h2>REST</h2>
           </section>
           <section>
@@ -117,7 +175,7 @@
           </section>
           <section>
             <h3 ><strong>Resumindo</strong></h3>
-            <p >From Roy Fielding:</p>
+            <p >Da tese de Roy Fielding:</p>
             <ul>
               <li>Client-Server</li>
               <li>Cache(able)</li>
@@ -128,14 +186,14 @@
             </ul>
           </section>
           <section>
-            <h3>In practice: <strong>HTTP</strong></h3>
+            <h3>Na prática: <strong>HTTP</strong></h3>
             <ul>
-              <li class='fragment'>Make good use of the headers</li>
+              <li class='fragment'>Bom uso dos headers</li>
               <li class='fragment'>Stateless</li>
               <li class='fragment'>Cacheable (E-Tags)</li>
-              <li class="fragment">URI as identifier</li>
-              <li class='fragment'>Verbs as actions (GET, POST, PUT...)</li>
-              <li class='fragment'>Formats (content-types): 
+              <li class="fragment">URI como identificador e localizador uniforme</li>
+              <li class='fragment'>Verbos como ações (GET, POST, PUT...)</li>
+              <li class='fragment'>Formatos (content-types): 
                 <ul>
                   <li><strong>HTML</strong></li>
                   <li><strong>JSON</strong></li>
@@ -147,13 +205,13 @@
         </section>
 
         <section>
-          <h3>Problem:</h3>
-          <p>How to work with the team?</p>
+          <h3>Problema:</h3>
+          <p>Como trabalhar em times?</p>
           <ul class='fragment'>
-            <li>And garantee code sync</li>
-            <li>And not lose code</li>
-            <li>And have access to old code</li>
-            <li>And so on...</li>
+            <li>E garantir a sincronia do código</li>
+            <li>E não perder código</li>
+            <li>E ter acesso a código antigo</li>
+            <li>E por ai vai...</li>
           </ul>
         </section>
 
@@ -163,65 +221,66 @@
             <img src="images/github.png" alt="GitHub" />
           </section>
           <section>
-            <h3>Solves</h3>
+            <h3>Resolve</h3>
             <ul>
-              <li>Who has the last version?</li>
-              <li>Who changed this line?</li>
-              <li>How do I know what changed?</li>
-              <li>How to send code?</li>
-              <li>I want to try this differently...</li>
-              <li>And more.</li>
+              <li>Quem tem a ultima versão do código?</li>
+              <li>Quem alterou essa linha?</li>
+              <li>Qual a diferença entre essas versões?</li>
+              <li>Como acessar o código do sistema?</li>
+              <li>Como colaborar com o sistema?</li>
+              <li>Quero testar uma coisa diferente aqui.</li>
+              <li>E muito mais...</li>
             </ul>
           </section>
         </section>
 
         <section>
-          <h3>Problem:</h3>
-          <p>Which language to use?</p>
+          <h3>Problema:</h3>
+          <p>Com qual linguagem vamos desenvolver?</p>
         </section>
 
         <section>
-          <h2>Many!</h2>
-          <p>Remember: <strong>Polyglot programming</strong> and <strong>use the best tool for each job</strong>.</p>
+          <h2>Várias!</h2>
+          <p>Lembre-se: <strong>Programação poliglota</strong> e <strong>usar a melhor ferramenta para cada caso</strong>.</p>
         </section>
 
         <section>
           <section>
             <h2>PHP</h2>
             <img src="images/php.png" alt="PHP" />
-            <h3>The language of the web</h3>
+            <h3>A linguagem da Web!</h3>
           </section>
           <section>
-            <h3>Pros</h3>
+            <h3>Prós</h3>
             <ul>
-              <li class='fragment'>I can code in PHP</li>
-              <li class='fragment'>You can code in PHP</li>
-              <li class='fragment'>Lots of resources</li>
+              <li class='fragment'>Eu sei</li>
+              <li class='fragment'>Você sabe</li>
+              <li class='fragment'>Todo programador sabe</li>
               <li class='fragment'>Wordpress, Drupal, Symfony, Facebook...</li>
-              <li class='fragment'>Lately has been shaping up good</li>
+              <li class='fragment'>Se modernizou bem ultimamente</li>
             </ul>
           </section>
           <section>
-            <h3>Cons</h3>
+            <h3>Contras</h3>
             <ul>
-              <li class='fragment'>Not all the community is mature</li>
-              <li class='fragment'>Easy to make a mess</li>
-              <li class="fragment">Require discipline</li>
+              <li class='fragment'>Ainda há imaturidade na comunidade</li>
+              <li class='fragment'>Muito fácil fazer bagunça</li>
+              <li class="fragment">Requer disciplina</li>
             </ul>
           </section>
           <section>
-            <h3>Best now a days:</h3>
+            <h3>Como usar atualmente:</h3>
             <ul>
               <!--
               <li>PHP5.6</li>
               -->
-              <li>Namespaces, classes and PDO</li>
+              <li>Namespaces e classes e PDO</li>
               <li>Composer</li>
-              <li>PHPUnit or SimpleTest</li>
+              <li>PHPUnit ou SimpleTest</li>
               <li>Behat (BDD)</li>
-              <li>Components from Symfony ou Zend</li>
-              <li>Lavarel or Slim</li>
-              <li>Templates mustache</li>
+              <li>Componentes Symfony ou Zend</li>
+              <li>Ou Lavarel ou o Slim</li>
+              <li>Templates mustache (ou outro)</li>
               <li>PHPTheRightWay.com</li>
             </ul>
           </section>
@@ -231,39 +290,40 @@
           <section>
             <h2>Ruby</h2>
             <img src="images/ruby.png" alt="ruby" />
-            <h3>The <strong>new</strong> language of the Web!</h3>
-            <p class="fragment"><small>ok, nodejs is the new-new, but really...</small></p>
+            <h3>A <strong>nova</strong> linguagem da Web!</h3>
+            <p class="fragment"><small>ok, a nova-nova é o nodejs, mas eu não vou citar ele aqui por que ainda não uso:)</small></p>
           </section>
           <section>
-            <h3>Pros</h3>
+            <h3>Prós</h3>
             <ul>
-              <li class='fragment'>I can code in ruby</li>
-              <li class="fragment">Lot of new programmers can</li>
-              <li class="fragment">Really easy to learn</li>
-              <li class="fragment">Truly Object Oriented</li>
-              <li class="fragment">Great for the web</li>
-              <li class="fragment">Very popular and with modern tools</li>
-              <li class="fragment">And is ok for ops tasks and scripts</li>
+              <li class='fragment'>Eu sei</li>
+              <li class="fragment">Muitos dos novos programadores sabem</li>
+              <li class="fragment">É muito fácil de aprender</li>
+              <li class="fragment">É muito fácil de aprender MESMO</li>
+              <li class="fragment">Orientada a objetos de verdade<span class='fragment'><small>(mais que java)</small></span></li>
+              <li class="fragment">Ótima para web</li>
+              <li class="fragment">Muito popular e com muita ferramenta atualizada</li>
+              <li class="fragment">Serve também para tarefas administrativas</li>
             </ul>
           </section>
           <section>
-            <h3>Cons</h3>
+            <h3>Contras</h3>
             <ul>
-              <li class="fragment">Sometimes lacks standart on the community</li>
-              <li class="fragment">Easy to make a mess</li>
-              <li class="fragment">Lot's on decision on webserver</li>
-              <li class="fragment">Easy to kill performance(but not that bad really)</li>
+              <li class="fragment">Não muito padronizada</li>
+              <li class="fragment">Fácil de criar uma bagunça</li>
+              <li class="fragment">Não tão fácil de botar em um servidor web</li>
+              <li class="fragment">E fácil de acabar com a performance (mas não é tão ruim na verdade)</li>
             </ul>
           </section>
           <section>
-            <h3>How I use it</h3>
+            <h3>Como usamos</h3>
             <ul>
               <li>2.1</li>
               <li>Bundler</li>
               <li>RSpec</li>
               <li>Sinatra</li>
               <li>Mustache</li>
-              <li>net &amp; json native </li>
+              <li>net &amp; json nativos</li>
             </ul>
           </section>
         </section>
@@ -272,46 +332,44 @@
           <section>
             <h2>Clojure</h2>
             <img src="images/clojure.png" alt="lisp" />
-            <h3>Functional programming on the JVM</h3>
+            <h3>Programação funcional na JVM.</h3>
           </section>
           <section>
             <h3>Prós</h3>
             <ul>
-              <li>JVM and java interop.</li>
+              <li>JVM e java interop. completo</li>
               <li>LISP</li>
-              <li>Imutability == predictability</li>
+              <li>Imutabilidade == previsivel</li>
               <li>Code is data, data is code</li>
-              <li>Parallelism and concurrency</li>
-              <li>Java performance, if needed.</li>
-              <li>Great standart and great community</li>
+              <li>Concorrente e paralela</li>
+              <li>Performance de java, se necessário</li>
+              <li>Padronizada, comunidade incrível</li>
             </ul>
           </section>
           <section>
-            <h3>Cons</h3>
+            <h3>Contras</h3>
             <ul>
-              <li>Learning curve</li>
-              <li>Hard to find programmers</li>
-              <li>JVM size and startup</li>
+              <li>Curva de aprendizado ingrime</li>
+              <li>Poucos profissionais no mercado</li>
+              <li>JVM</li>
             </ul>
           </section>
           <section>
-            <h3>How I use it</h3>
+            <h3>Como usamos</h3>
             <ul>
               <li>lein</li>
               <li>midje</li>
               <li>ring</li>
               <li>compojure</li>
-              <li>immutant</li>
-              <li>core.async</li>
-              <li>prismatic libs</li>
               <li>clj-http + data.json</li>
+              <li>jetty + war</li>
             </ul>
           </section>
         </section>
 
         <section>
-          <h3>Problem:</h3>
-          <p>Where to persist data?</p>
+          <h3>Problema:</h3>
+          <p>Onde persistir os dados?</p>
         </section>
 
         <section>
@@ -320,15 +378,14 @@
             <img src="images/couchdb.png" alt="Relax." />
           </section>
           <section>
-            <h3>It is</h3>
+            <h3>Caracteristicas</h3>
             <ul>
               <li class="fragment">REST</li>
               <li class="fragment">Schemaless</li>
               <li class="fragment">Documet-based</li>
-              <li class="fragment">Changes Feed</li>
-              <li class='fragment'>Incremental</li>
-              <li class="fragment">Efficient HTTP-based replication</li>
-              <li class='fragment'>Most trustable DB I have used</li>
+              <li class="fragment">Feed de mudanças</li>
+              <li class='fragment'>Incremental sempre</li>
+              <li class="fragment">Replicação eficiente através de HTTP</li>
               <li class="fragment">CON: hard/limited to query (map/reduce)</li>
             </ul>
           </section>
@@ -338,17 +395,16 @@
           <section>
             <h2>ElasticSearch</h2>
             <img src="images/es.png" alt="You know, for search." />
-            <p>You know, for search!</p>
+            <p>Para todas as necessidades de busca!</p>
           </section>
           <section>
-            <h3>It is</h3>
+            <h3>Caracteristicas</h3>
             <ul>
               <li class="fragment">REST</li>
               <li class="fragment">Schemaless</li>
               <li class="fragment">Document-based</li>
-              <li class="fragment">Efficient and flexible searching of anything</li>
-              <li class="fragment">Easy to send data in</li>
-              <li class="fragment">CON: Not your primary database</li>
+              <li class="fragment">Busca extremamente eficiente</li>
+              <li class="fragment">Rivers: integração com seu BD</li>
             </ul>
           </section>
         </section>
@@ -357,17 +413,16 @@
           <section>
             <h2>PostgreSQL</h2>
             <img src="images/postgresql.jpg" alt="The great SQL DB." />
-            <p>The great SQL DB.</p>
           </section>
           <section>
-            <h3>It is</h3>
+            <h3>Caracteristicas</h3>
             <ul>
-              <li class="fragment">Relational: everybody can handle it</li>
-              <li class="fragment">Lots of tools</li>
+              <li class="fragment">Relacional: todo mundo sabe</li>
+              <li class="fragment">Muitas ferramentas</li>
               <li class="fragment">PostGIS!</li>
               <li class="fragment">hstore/jsonstore</li>
               <li class="fragment">Foreign Data Wrappers</li>
-              <li class="fragment">If going relational, go PostgreSQL</li>
+              <li class="fragment">Se for usar relacional, use PostgreSQL</li>
             </ul>
           </section>
         </section>
@@ -376,35 +431,34 @@
           <section>
             <h2>SQLite</h2>
             <img src="images/sqlite.png" alt="The default SQL DB." />
-            <p>Default simple SQL DB</p>
           </section>
           <section>
-            <h3>It is</h3>
+            <h3>Caracteristicas</h3>
             <ul>
-              <li class="fragment">Relational: everybody can handle it</li>
-              <li class="fragment">Faster them it seems</li>
-              <li class="fragment">Lots of read, few parallels writes </li>
-              <li class="fragment">Single file DB, no depency and simple OPS</li>
+              <li class="fragment">Relacional: todo mundo sabe</li>
+              <li class="fragment">Mais performatico que você pensa</li>
+              <li class="fragment">Bom para muitas leituras e poucas escritas paralelas</li>
+              <li class="fragment">Apenas um arquivo, sempre disponível</li>
               <li class="fragment">WAL, Fulltext-search, SpatialIndex...</li>
             </ul>
           </section>
         </section>
 
         <section>
-          <h3>Problem:</h3>
-          <p>How to make sure it all works?</p>
+          <h3>Problema:</h3>
+          <p>Como garantir que tudo isso funciona?</p>
         </section>
 
         <section>
           <h2>TDD</h2>
-          <p>We all know this.</p>
+          <p>Todo mundo já sabe.</p>
         </section>
         <section>
           <section>
             <h2><s>TDD</s></h2>
-            <p><s>We all knwo this.</s></p>
+            <p><s>Todo mundo já sabe.</s></p>
             <h2>BDD</h2>
-            <p>Most of us knows: behavior tests.</p>
+            <p>A maioria sabe: Testes de comportamento (features).</p>
           </section>
           <section>
           <pre ><code>Feature: Open and edit profiles
@@ -429,10 +483,10 @@
         </section>
 
         <section>
-          <h3>Problem:</h3>
-          <p>My dev-env will become a mess!</p>
-          <p><small>or: it works on my machine</small></p>
-          <p><small>or: someone has to configure the new guy pc</small></p>
+          <h3>Problema:</h3>
+          <p>Meu ambiente de devenvolvimento vai ficar um caos!</p>
+          <p><small>ou: mas funciona na minha maquina</small></p>
+          <p><small>ou: alguém tem que configurar o ambiente do novo programador...</small></p>
         </section>
 
         <section>
@@ -442,13 +496,13 @@
             <p>Development environments made easy.</p>
           </section>
           <section>
-            <p>Standart and automation of dev env.</p>
+            <p>Padronização e automação do ambiente de desenvolvimento.</p>
             <ul>
-              <li>Single configuration file (Vagrantfile) for each project</li>
-              <li>The dev env is part of the code now</li>
-              <li>Source control</li>
-              <li>Publish, share and replicate</li>
-              <li>Standart</li>
+              <li>Um arquivo de configuração (Vagrantfile) por projeto</li>
+              <li>Ambiente de dev faz parte do código-fonte agora</li>
+              <li>Entra no controle de versão</li>
+              <li>Replicável e explicável</li>
+              <li>Padronizado</li>
             </ul>
           </section>
           <section>
@@ -462,7 +516,7 @@
   config.vm.provision :shell, :inline => "wget https://raw.github.com/technomancy/leiningen/stable/bin/lein -O /usr/bin/lein"
   config.vm.provision :shell, :inline => "chmod +x /usr/bin/lein"
 end</code></pre>
-            <p class="fragment">That is just ruby...</p>
+            <p class="fragment">isso é código ruby...</p>
           </section>
           <section>
             <h3>Vagrantfile</h3>
@@ -488,14 +542,23 @@ end</code></pre>
 end</code></pre>
           </section>
           <section>
-            <p >But really, docker-compose is better for this.</p>
+            <h3>Integra com:</h3>
+            <ul>
+              <li>Shell</li>
+              <li>Puppet</li>
+              <li>Chef</li>
+              <li>Ansible</li>
+              <li>Salt</li>
+              <li>Docker</li>
+              <li>...</li>
+            </ul>
           </section>
         </section>
 
         <section>
-          <h3>Problem:</h3>
-          <p>My production will be a mess!</p>
-          <p><small>This actually is the dev env now</small></p>
+          <h3>Problema:</h3>
+          <p>Meu ambiente de produção vai ficar um caos!</p>
+          <p><small>ou: não tenho tanto servidor assim...</small></p>
         </section>
 
         <section>
@@ -503,38 +566,40 @@ end</code></pre>
             <h2>Docker</h2>
             <img src="images/docker.png" alt="production env as code" />
             <p>Build, ship and run!</p>
+            <p class="fragment"><small>vagrant para produção</small></p>
           </section>
           <section>
-            <h3>It is</h3>
+            <h3>Caracteristicas</h3>
             <ul>
-              <li>Single Dockerfile by project</li>
-              <li>Dev and prod is the same, and part of the code</li>
-              <li>Dev and Prod gets version controlled, automated and testable</li>
-              <li>Fast</li>
+              <li>Um arquivo Dockerfile por projeto</li>
+              <li>Ambiente de produção faz parte do código</li>
+              <li>E entra no controle de versão</li>
+              <li>Equaliza os ambientes, tornando dev, test, homolog prod mais próximos</li>
+              <li>Facilita deploy, integração, testes, homolog...</li>
+              <li>É o GIT para imagens de produção</li>
             </ul>
           </section>
           <section>
-            <h3>How?</h3>
-            <p>You will automate, but:</p>
+            <h3>Como?</h3>
             <pre><code>
-# At your machine
-docker build -t cncflora/profiles . # Build this project image
-docker push cncflora/profiles # Send it to repository
-# On the server
-docker pull cncflora/profiles # pull lastest image, incrementally
-docker run -d -p 8080 -t cncflora/profiles # Runs it
+# na sua maquina/no servidor de integração
+docker build -t cncflora/profiles . # cria a imagem/container do projeto atual
+docker push cncflora/profiles # envia a imagem criado para o repositório de imagens
+# em produção
+docker pull cncflora/profiles # pega a ultima versão da imagem, de forma incremental
+docker run -d -p 8080 -t cncflora/profiles # executa a imagem em um container
             </code></pre>
           </section>
           <section>
             <ul>
-              <p>Any server, same thing:</p>
+              <p>Qualquer servidor, qualquer sistema Linux, funciona igual:</p>
               <ul>
-                <li class="fragment">AWS</li>
-                <li class="fragment">Google compute engine</li>
-                <li class="fragment">VPS</li>
-                <li class="fragment">Vmware, xen</li>
-                <li class="fragment">openstack, openshift, cloudfoundry</li>
-                <li class="fragment">Anything Linux</li>
+                <li class="fragment">Na amazon AWS</li>
+                <li class="fragment">No google compute engine</li>
+                <li class="fragment">No seu VPS favorito</li>
+                <li class="fragment">Na sua VM do vmware, xen</li>
+                <li class="fragment">No openstack, openshift, cloudfoundry</li>
+                <li class="fragment">Basta ser linux recente (kernel >= 3.8)</li>
               </ul>
             </ul>
           </section>
@@ -593,14 +658,14 @@ CMD ["supervisord"]</code></pre>
         </section>
 
         <section>
-          <h3>Problem</h3>
-          <p>All that puts more pressure on Ops.</p>
+          <h3>Problema</h3>
+          <p>Tudo isso coloca mais pressão em cima do operacional</p>
         </section>
 
         <section>
           <section>
             <h2>Dev Ops</h2>
-            <p><small>Beyond docker.</small></p>
+            <p><small>Além do docker.</small></p>
           </section>
           <section>
             <h3>docker-compose</h3>
@@ -615,6 +680,14 @@ logstash:
     ports:
         - 80
         - 9514
+datahub:
+    image: cncflora/datahub
+    name: datahub
+    ports:
+        - "80"
+        - "9001"
+    volumes:
+        - "/var/lib/couchdb:/var/lib/couchdb:rw"
 proxy:
     image: diogok/proxy-docker
     name: proxy
@@ -648,15 +721,17 @@ floradata:
     name: floradata
     ports:
         - "80"</code></pre>
-            <p>Orchestrate your container.</p>
+            <p>Orquestra seus containers.</p>
           </section>
           <section>
             <h3>ETCD</h3>
-            <p>Share configuration REST server.</p>
+            <p>Servidor REST de configuração compartilhada.</p>
+            <p>Para saber o que está rodadndo aonde, qual os parametros e etc...</p>
+            <h3>CONFD</h3>
+            <p>Lê os dados do ETCD e atualiza arquivos de configuração.</p>
           </section>
           <section>
             <h3>Nginx</h3>
-            <p>Proxy to the container network</p>
             <pre><code>http {
     server {
         listen 80;
@@ -675,24 +750,29 @@ floradata:
         <% end %>
     }
 }</code></pre>
+            <p>Atua como proxy para os containers, com dados do confd/etcd.</p>
           </section>
           <section>
             <h3>Supervisord</h3>
             <img src="images/supervisord.png" />
-            <p>SUpervvisor the processes</p>
+            <p>Supervisona, monitora e recolhe logs de aplicações.</p>
           </section>
           <section>
             <h3>Logstash</h3>
             <img src="images/logstash.png"  />
-            <p>Get those logs in a nice view</p>
+            <p>Agrega os logs, indexa e visualiza.</p>
           </section>
         </section>
 
         <section>
+          <h2>Como ficou tudo?</h2>
+        </section>
+
+        <section>
           <section>
-            <h3>Next step:</h3>
-            <h2><s>Continuous integration</s></h2>
-            <h2>Continuous delivery</h2>
+            <h3>Próximo passo:</h3>
+            <h2><s>Integração contínua</s></h2>
+            <h2>Entrega contínua</h2>
           </section>
           <section>
               <p>TODO</p>
