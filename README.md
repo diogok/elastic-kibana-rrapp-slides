@@ -1,8 +1,8 @@
-# How I "Devops"
+# Elastic + Kibana and Rapid Risk Assessment App Slides
 
 The slides:
 
-https://diogok.github.io/how-i-devops/
+[https://diogok.github.io/elastic-kibana-rrapp-slides](https://diogok.github.io/elastic-kibana-rrapp-slides)
 
 Using reveal.js
 
@@ -10,4 +10,4 @@ Using reveal.js
 
 MIT licensed
 
-Copyright (C) 2014 Diogo Souza  da Silva, http://diogok.net
+Copyright (C) 2017 Diogo Souza  da Silva, http://diogok.net

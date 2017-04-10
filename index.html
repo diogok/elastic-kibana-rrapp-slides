@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Dev Stuff</title>
+		<title>Elasticsearch and Kibana and RRAPP</title>
 
-		<meta name="description" content="Latest techniques and techonologies for fast and efficient software development.">
+		<meta name="description" content="Elasticsearch, Kibana and risk assessment">
 		<meta name="author" content="Diogo Souza da Silva">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -43,666 +43,376 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h2>Dev & Ops</h2>
-					<h3>My personal state of art</h3>
+					<h2>Elasticsearch & Kibana</h2>
+					<h3>Indexando e explorando dados</h3>
 				</section>
 
         <section>
-          <h3>Context:</h3>
-          <h2>Solving problems.</h2>
-        </section>
-
-        <section>
-          <h3>Problem:</h3>
-          <p>How to organize systems, in a simple maner to create and keep?</p>
+          <h3>Contexto</h3>
+          <h4>Avaliação o risco de extinção da flora do Brasil</h4>
         </section>
 
         <section>
           <section>
-            <h3>Architectural style</h3>
-            <h2>Microservices</h2>
+            <h2>Elasticsearch</h2>
+            <blockquote>You know, for search!</blockquote>
           </section>
           <section>
-            <p>Martin Fowler puts it best:</p>
-            <blockquote class='fragment'>
-              A component is a unit of software that is independently replaceable and upgradeable.
-            </blockquote>
-            <blockquote class='fragment'>
-              Their Primary way of componentizing (...) software is by breaking it down into services.
-            </blockquote>
-            <blockquote class='fragment'>
-              Services are independently deployable.
-            </blockquote>
-            <blockquote class='fragment'>
-              Services are out-of-process components who communicate with a mechanism such as a web service request.
-            </blockquote>
-          </section>
-          <section>
-          <img src="images/micro-services.png" alt="decentralized-data" />
-          </section>
-          <section>
-            <h2>Brings to the architecture:</h2>
-            <h3>Polyglot programming</h3>
-            <h3>Polyglot persistence</h3>
-            <h3>Best tool for each job</h3>
-          </section>
-          <section>
-            <h2>Pressure on the Ops:</h2>
-            <h3>Automation</h3>
-            <h3>Monitoring</h3>
-            <h3>Provisioning</h3>
-            <h3>Fast delivery</h3>
-          </section>
-        </section>
-
-        <section>
-          <h3>Problem:</h3>
-          <p>How to make this services communicate with each other and the world?</p>
-        </section>
-
-        <section>
-          <section>
-            <h3>Archtectural style</h3>
-            <h2>REST</h2>
-          </section>
-          <section>
-            <h2>REST</h2>
+            <h3>Elasticsearch</h3>
             <ul>
-              <li>REpresentational</li>
-              <li>State</li>
-              <li>Transfer</li>
-            </ul>
-            <p>&nbsp;</p>
-            <p class="fragment">a.k.a: <strong>WEB</strong></p>
-          </section>
-          <section>
-            <h3 ><strong>Resumindo</strong></h3>
-            <p >From Roy Fielding:</p>
-            <ul>
-              <li>Client-Server</li>
-              <li>Cache(able)</li>
-              <li>Stateless</li>
-              <li>Uniform Interface</li>
-              <li>Layered Systems</li>
-              <li><s>Code on-Demand</s></li>
+              <li class="fragment">HTTP+JSON</li>
+              <li class="fragment">Distribuído</li>
+              <li class="fragment">Busca e análises</li>
+              <li class="fragment">Suporte e comunidade</li>
             </ul>
           </section>
-          <section>
-            <h3>In practice: <strong>HTTP</strong></h3>
-            <ul>
-              <li class='fragment'>Make good use of the headers</li>
-              <li class='fragment'>Stateless</li>
-              <li class='fragment'>Cacheable (E-Tags)</li>
-              <li class="fragment">URI as identifier</li>
-              <li class='fragment'>Verbs as actions (GET, POST, PUT...)</li>
-              <li class='fragment'>Formats (content-types): 
-                <ul>
-                  <li><strong>HTML</strong></li>
-                  <li><strong>JSON</strong></li>
-                  <li>XML</li>
-                  <li>CSV</li>
-                </ul>
-            </ul>
-          </section>
-        </section>
 
-        <section>
-          <h3>Problem:</h3>
-          <p>How to work with the team?</p>
-          <ul class='fragment'>
-            <li>And garantee code sync</li>
-            <li>And not lose code</li>
-            <li>And have access to old code</li>
-            <li>And so on...</li>
-          </ul>
-        </section>
-
-        <section>
           <section>
-            <h2>GIT</h2>
-            <img src="images/github.png" alt="GitHub" />
-          </section>
-          <section>
-            <h3>Solves</h3>
-            <ul>
-              <li>Who has the last version?</li>
-              <li>Who changed this line?</li>
-              <li>How do I know what changed?</li>
-              <li>How to send code?</li>
-              <li>I want to try this differently...</li>
-              <li>And more.</li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
-          <h3>Problem:</h3>
-          <p>Which language to use?</p>
-        </section>
-
-        <section>
-          <h2>Many!</h2>
-          <p>Remember: <strong>Polyglot programming</strong> and <strong>use the best tool for each job</strong>.</p>
-        </section>
-
-        <section>
-          <section>
-            <h2>PHP</h2>
-            <img src="images/php.png" alt="PHP" />
-            <h3>The language of the web</h3>
-          </section>
-          <section>
-            <h3>Pros</h3>
-            <ul>
-              <li class='fragment'>I can code in PHP</li>
-              <li class='fragment'>You can code in PHP</li>
-              <li class='fragment'>Lots of resources</li>
-              <li class='fragment'>Wordpress, Drupal, Symfony, Facebook...</li>
-              <li class='fragment'>Lately has been shaping up good</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Cons</h3>
-            <ul>
-              <li class='fragment'>Not all the community is mature</li>
-              <li class='fragment'>Easy to make a mess</li>
-              <li class="fragment">Require discipline</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Best now a days:</h3>
-            <ul>
-              <!--
-              <li>PHP5.6</li>
-              -->
-              <li>Namespaces, classes and PDO</li>
-              <li>Composer</li>
-              <li>PHPUnit or SimpleTest</li>
-              <li>Behat (BDD)</li>
-              <li>Components from Symfony ou Zend</li>
-              <li>Lavarel or Slim</li>
-              <li>Templates mustache</li>
-              <li>PHPTheRightWay.com</li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h2>Ruby</h2>
-            <img src="images/ruby.png" alt="ruby" />
-            <h3>The <strong>new</strong> language of the Web!</h3>
-            <p class="fragment"><small>ok, nodejs is the new-new, but really...</small></p>
-          </section>
-          <section>
-            <h3>Pros</h3>
-            <ul>
-              <li class='fragment'>I can code in ruby</li>
-              <li class="fragment">Lot of new programmers can</li>
-              <li class="fragment">Really easy to learn</li>
-              <li class="fragment">Truly Object Oriented</li>
-              <li class="fragment">Great for the web</li>
-              <li class="fragment">Very popular and with modern tools</li>
-              <li class="fragment">And is ok for ops tasks and scripts</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Cons</h3>
-            <ul>
-              <li class="fragment">Sometimes lacks standart on the community</li>
-              <li class="fragment">Easy to make a mess</li>
-              <li class="fragment">Lot's on decision on webserver</li>
-              <li class="fragment">Easy to kill performance(but not that bad really)</li>
-            </ul>
-          </section>
-          <section>
-            <h3>How I use it</h3>
-            <ul>
-              <li>2.1</li>
-              <li>Bundler</li>
-              <li>RSpec</li>
-              <li>Sinatra</li>
-              <li>Mustache</li>
-              <li>net &amp; json native </li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h2>Clojure</h2>
-            <img src="images/clojure.png" alt="lisp" />
-            <h3>Functional programming on the JVM</h3>
-          </section>
-          <section>
-            <h3>Prós</h3>
-            <ul>
-              <li>JVM and java interop.</li>
-              <li>LISP</li>
-              <li>Imutability == predictability</li>
-              <li>Code is data, data is code</li>
-              <li>Parallelism and concurrency</li>
-              <li>Java performance, if needed.</li>
-              <li>Great standart and great community</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Cons</h3>
-            <ul>
-              <li>Learning curve</li>
-              <li>Hard to find programmers</li>
-              <li>JVM size and startup</li>
-            </ul>
-          </section>
-          <section>
-            <h3>How I use it</h3>
-            <ul>
-              <li>lein</li>
-              <li>midje</li>
-              <li>ring</li>
-              <li>compojure</li>
-              <li>immutant</li>
-              <li>core.async</li>
-              <li>prismatic libs</li>
-              <li>clj-http + data.json</li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
-          <h3>Problem:</h3>
-          <p>Where to persist data?</p>
-        </section>
-
-        <section>
-          <section>
-            <h2>CouchDB</h2>
-            <img src="images/couchdb.png" alt="Relax." />
-          </section>
-          <section>
-            <h3>It is</h3>
-            <ul>
-              <li class="fragment">REST</li>
-              <li class="fragment">Schemaless</li>
-              <li class="fragment">Documet-based</li>
-              <li class="fragment">Changes Feed</li>
-              <li class='fragment'>Incremental</li>
-              <li class="fragment">Efficient HTTP-based replication</li>
-              <li class='fragment'>Most trustable DB I have used</li>
-              <li class="fragment">CON: hard/limited to query (map/reduce)</li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h2>ElasticSearch</h2>
-            <img src="images/es.png" alt="You know, for search." />
-            <p>You know, for search!</p>
-          </section>
-          <section>
-            <h3>It is</h3>
-            <ul>
-              <li class="fragment">REST</li>
-              <li class="fragment">Schemaless</li>
-              <li class="fragment">Document-based</li>
-              <li class="fragment">Efficient and flexible searching of anything</li>
-              <li class="fragment">Easy to send data in</li>
-              <li class="fragment">CON: Not your primary database</li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h2>PostgreSQL</h2>
-            <img src="images/postgresql.jpg" alt="The great SQL DB." />
-            <p>The great SQL DB.</p>
-          </section>
-          <section>
-            <h3>It is</h3>
-            <ul>
-              <li class="fragment">Relational: everybody can handle it</li>
-              <li class="fragment">Lots of tools</li>
-              <li class="fragment">PostGIS!</li>
-              <li class="fragment">hstore/jsonstore</li>
-              <li class="fragment">Foreign Data Wrappers</li>
-              <li class="fragment">If going relational, go PostgreSQL</li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h2>SQLite</h2>
-            <img src="images/sqlite.png" alt="The default SQL DB." />
-            <p>Default simple SQL DB</p>
-          </section>
-          <section>
-            <h3>It is</h3>
-            <ul>
-              <li class="fragment">Relational: everybody can handle it</li>
-              <li class="fragment">Faster them it seems</li>
-              <li class="fragment">Lots of read, few parallels writes </li>
-              <li class="fragment">Single file DB, no depency and simple OPS</li>
-              <li class="fragment">WAL, Fulltext-search, SpatialIndex...</li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
-          <h3>Problem:</h3>
-          <p>How to make sure it all works?</p>
-        </section>
-
-        <section>
-          <h2>TDD</h2>
-          <p>We all know this.</p>
-        </section>
-        <section>
-          <section>
-            <h2><s>TDD</s></h2>
-            <p><s>We all knwo this.</s></p>
-            <h2>BDD</h2>
-            <p>Most of us knows: behavior tests.</p>
-          </section>
-          <section>
-          <pre ><code>Feature: Open and edit profiles
-
-    Scenario: create profile
-        Given I am on "/specie/Aphelandra longiflora"
-        Then I login as "Diogo", "diogo@cncflora.net", "admin,analyst"
-        And I press "create-btn"
-
-    Scenario: Edit a profile, changes apply and metadata
-        Given I am on "/specie/Aphelandra longiflora"
-        When I login as "Bruno", "bruno@cncflora.net", "analyst", "ACANTHACEAE"
-        And I follow "Editar"
-        Then I should see "Contribuidor(es): [Bruno] ; Diogo"
-        Then I should see "Taxonomic Notes"
-        Then I fill field "textarea[id*='-taxonomicNotes-notes']" with "Hello, notes."
-        And I press "Salvar"
-        Then I should see "Status: open"
-        Then I should see "Notas Taxonômicas"
-        Then I should see "Hello, notes."</code></pre>
-          </section>
-        </section>
-
-        <section>
-          <h3>Problem:</h3>
-          <p>My dev-env will become a mess!</p>
-          <p><small>or: it works on my machine</small></p>
-          <p><small>or: someone has to configure the new guy pc</small></p>
-        </section>
-
-        <section>
-          <section>
-            <h2>Vagrant!</h2>
-            <img src="images/vagrant.png"  />
-            <p>Development environments made easy.</p>
-          </section>
-          <section>
-            <p>Standart and automation of dev env.</p>
-            <ul>
-              <li>Single configuration file (Vagrantfile) for each project</li>
-              <li>The dev env is part of the code now</li>
-              <li>Source control</li>
-              <li>Publish, share and replicate</li>
-              <li>Standart</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Vagrantfile</h3>
-            <pre><code>Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/trusty32"
-
-  config.vm.network "private_network", ip: "192.168.50.188"
-
-  config.vm.provision :shell, :inline => "apt-get update && apt-get install openjdk-7-jdk curl git tmux vim htop redis-server -y"
-  config.vm.provision :shell, :inline => "wget https://raw.github.com/technomancy/leiningen/stable/bin/lein -O /usr/bin/lein"
-  config.vm.provision :shell, :inline => "chmod +x /usr/bin/lein"
-end</code></pre>
-            <p class="fragment">That is just ruby...</p>
-          </section>
-          <section>
-            <h3>Vagrantfile</h3>
-            <pre><code>Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/trusty64"
-
-  config.vm.network "private_network", ip: "192.168.50.10"
-  config.vm.network :forwarded_port, host: 8888, guest: 80, auto_correct: true
-
-  config.vm.provider "virtualbox" do |v|
-    v.memory = 2048
-    v.cpus = 2
-  end
-
-  config.vm.provision "docker" do |d|
-    d.run "coreos/etcd", name: "etcd", args: "-p 8001:80 -p 4001:4001"
-  end
-
-  config.vm.provision "chef_solo" do |chef|
-    chef.add_recipe "apache"
-    chef.add_recipe "couchdb"
-  end
-end</code></pre>
-          </section>
-          <section>
-            <p >But really, docker-compose is better for this.</p>
-          </section>
-        </section>
-
-        <section>
-          <h3>Problem:</h3>
-          <p>My production will be a mess!</p>
-          <p><small>This actually is the dev env now</small></p>
-        </section>
-
-        <section>
-          <section>
-            <h2>Docker</h2>
-            <img src="images/docker.png" alt="production env as code" />
-            <p>Build, ship and run!</p>
-          </section>
-          <section>
-            <h3>It is</h3>
-            <ul>
-              <li>Single Dockerfile by project</li>
-              <li>Dev and prod is the same, and part of the code</li>
-              <li>Dev and Prod gets version controlled, automated and testable</li>
-              <li>Fast</li>
-            </ul>
-          </section>
-          <section>
-            <h3>How?</h3>
-            <p>You will automate, but:</p>
+            <h3>Elasticsearch</h3>
+            <p>Começamos criando um índice para o projeto</p>
             <pre><code>
-# At your machine
-docker build -t cncflora/profiles . # Build this project image
-docker push cncflora/profiles # Send it to repository
-# On the server
-docker pull cncflora/profiles # pull lastest image, incrementally
-docker run -d -p 8080 -t cncflora/profiles # Runs it
+            PUT /armax
             </code></pre>
           </section>
+
           <section>
+            <h3>Elasticsearch</h3>
+            <p>Indexamos dados por tipo</p>
+
+            <pre><code>
+            PUT /armax/arma/wolverine
+            {
+             "nome":"wolverine"
+             ,"numero":10
+             ,"poderes":["regeneração","adamantium"]
+             ,"ativo":false
+            }
+
+            PUT /armax/arma/deadpool
+            {
+             "nome":"deadpool"
+             ,"numero":8
+             ,"poderes":["regeneração"]
+             ,"responsavel":"Ajax"
+            }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Elasticsearch</h3>
+            <p>Diferentes tipos</p>
+
+            <pre><code>
+            POST /armax/mortes
+            {
+              "arma":"wolverine"
+              ,"data":"2017-01-01"
+              ,"pais":"BR"
+            }
+
+            POST /armax/mortes
+            {
+              "arma":"deadpool"
+              ,"data":"2017-01-02"
+              ,"pais":"US"
+            }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Elasticsearch</h3>
+            <h4>Schema dinâmico</h4>
+            <pre><code>
+            GET /armax
+            {
+              "armax": {
+                "mappings":{
+                  "arma": {
+                    "properties": {
+                      "nome": {"type":"text"}
+                      ,"responsável":{"type":"text"}
+                      ,"poderes": {"type":"text"}
+                      ,"numero":{"type":"integer"}
+                      ,"ativo":{"type":"boolean"}
+                    }
+                  }
+                  ,"morte": {
+                    "properties": {
+                      "arma": {"type":"text"}
+                      ,"data":{"type":"text"}
+                      ,"pais":{"type":"text"}
+                    }
+                  }
+                }
+              }
+            }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Elasticsearch</h3>
+            <h4>Schema pode ser definido</h4>
+            <pre><code>
+            PUT /armax/morte/_mapping
+            {
+              "properties": {
+                "arma": {"type":"text"}
+                ,"data":{"type":"date"}
+                ,"pais":{"type":"text"}
+                ,"location": {
+                  "type":"geo_point"
+                }
+              }
+            }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Elasticsearch</h3>
+            <p>E podemos buscar de forma simples</p>
+            <pre><code>
+            GET /armax/arma/_search?q=wolverine
+            GET /armax/arma/_search?q=wolv*
+            GET /armax/arma/_search?q=ativo:true
+            GET /armax/_search?q=wolverine
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Elasticsearch</h3>
+            <p>E podemos buscar de forma completa</p>
+            <pre><code>
+            POST /armax/morte/_search
+
+            {
+            "fields":["arma"]
+            ,"sort":["data"]
+            ,"query":{
+              "bool":{
+                "must": {
+                  "geo_bounding_box":
+                    "location": {
+                      "top_left": { "lat": 42, "lon": -72 },
+                      "bottom_right": { "lat": 40, "lon": -74 }}}
+                ,"must": {
+                  "range": {
+                    "data":{"gte":"2016-02-17","lt":"2017"} } }
+                }
+              }
+            }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Elasticsearch</h3>
+            <p>Agregar dados também</p>
+            <pre><code>
+            POST /armax/morte/_search
+
+            {
+              "aggs": {
+                "mortes_por_arma":{
+                  "terms": {
+                    {"field": "arma"}
+                  }
+                }
+              }
+            }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Elasticsearch</h3>
+            <p>Agregar dados também</p>
+            <pre><code>
+            POST /armax/morte/_search
+
+            {
+              "aggs": {
+                "mortes_por_arma_por_dia":{
+                  "date_histogram" : {
+                    "field" : "date", "interval" : "month"
+                   }
+                  ,"aggs": {
+                    "armas": { "terms": {"field": "arma"} }
+                  }
+                }
+              }
+            }
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Kibana</h2>
+            <blockquote>Visualize and Explore</blockquote>
+          </section>
+
+          <section>
+            <h2>Kibana</h2>
+            <p><a href="http://163.172.130.4:8001/app/kibana">Let's explore!</a></p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <p><a href="https://br.biodiversity.cloud/">Rapid Risk Assessment Application</a></p>
+            <h3>Avalação do risco de extinção <br />da flora do Brasil</h3>
+            <h4>Jardim Botânico do Rio de Janeiro</h4>
+          </section>
+
+          <section>
+            <img src="images/atelastic.png" />
+          </section>
+
+          <section>
+            <h3>Dados de biodiversidade</h3>
             <ul>
-              <p>Any server, same thing:</p>
-              <ul>
-                <li class="fragment">AWS</li>
-                <li class="fragment">Google compute engine</li>
-                <li class="fragment">VPS</li>
-                <li class="fragment">Vmware, xen</li>
-                <li class="fragment">openstack, openshift, cloudfoundry</li>
-                <li class="fragment">Anything Linux</li>
-              </ul>
+              <li>Coletar dados</li>
+              <li>Normalizar os dados</li>
+              <li>Analisar</li>
+              <li>Visualizar</li>
             </ul>
           </section>
+
           <section>
-            <h3>Dockerfile</h3>
-            <pre><code>FROM dockerfile/java
-
-RUN wget http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-runner/9.2.0.M0/jetty-runner-9.2.0.M0.jar -O /root/jetty.jar
-
-ADD target/dwc-services-0.0.4-standalone.war /root/dwc-services.war
-
-EXPOSE 8080
-
-CMD ["java -jar","/root/jetty.jar","/root/dwc-services.war"]</code></pre>
+            <img src="images/method.png" alt="Método cientifico" />
           </section>
+
           <section>
-            <h3>Dockerfile</h3>
-            <pre><code>FROM ubuntu:14.04
-
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install apache2 libapache2-mod-php5 php5 php5-cli php5-curl php5-common php5-sqlite php5-mysql php5-pgsql php5-gd -y 
-
-RUN apt-get install supervisor -y
-RUN mkdir /var/log/supervisord 
-
-RUN a2enmod rewrite 
-
-RUN sed -i -e 's/memory_limit.*/memory_limit=512M/g' /etc/php5/apache2/php.ini && \
-    sed -i -e 's/upload_max_filesize.*/upload_max_filesize=128M/g' /etc/php5/apache2/php.ini && \
-    sed -i -e 's/post_max_size.*/post_max_size=128M/g' /etc/php5/apache2/php.ini && \
-    sed -i -e 's/display_errors.*/display_erros=On/g' /etc/php5/apache2/php.ini
-
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
-ENV APACHE_LOG_DIR /var/log/apache2
-ENV APACHE_LOCK_DIR /var/lock/apache2
-ENV APACHE_PID_FILE /var/apache2.pid
-ENV PHP_ENV production
-
-ADD default.conf /etc/apache2/sites-available/000-default.conf
-
-ADD supervisord.conf /etc/supervisor/conf.d/apache.conf
-
-ADD vendor /var/www/vendor
-RUN chown www-data.www-data /var/www/vendor -Rf
-
-ADD . /var/www
-RUN chown www-data.www-data /var/www -Rf
-
-EXPOSE 80
-EXPOSE 9001
-
-CMD ["supervisord"]</code></pre>
+            <h3>Dados de biodiversidade</h3>
+            <h4>Taxonomia</h4>
+            <p>Classicação e nome de espécie</p>
+            <ul>
+              <li>Nomes de espécies</li>
+              <li>Sinônimos desses nomes</li>
+              <li>Agrupados por família</li>
+            </ul>
           </section>
+
+          <section>
+            <h3>Dados de biodiversidade</h3>
+            <h4>Taxonomia</h4>
+            <p>Fabaceae Vicea faba</p>
+            <pre><code>
+            {
+             "family":"Fabaceae"
+             ,"genus":"vicea"
+             ,"specificEpithet":"faba"
+             ,"taxonomicStatus":"accepted"
+            }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Dados de biodiversidade</h3>
+            <h4>Taxonomia</h4>
+            <p>Fabaceae Vicea alba</p>
+            <pre><code>
+            {
+             "family":"Fabaceae"
+             ,"genus":"vicea"
+             ,"specificEpithet":"alba"
+             ,"taxonomicStatus":"synonym"
+             ,"acceptedName":"Vicea faba"
+            }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Dados de biodiversidade</h3>
+            <h4>Taxonomia</h4>
+            <p><a href="https://br.biodiversity.cloud/elasticsearch/dwc/taxon/_mapping">/elasticsearch/dwc/taxon/_mapping</a></p>
+            <p class="fragment">25 campos</p>
+          </section>
+
+          <section>
+            <h3>Dados de biodiversidade</h3>
+            <h4>Ocorrência</h4>
+            <p>Amostra da espécie na natureza</p>
+            <ul>
+              <li class="fragment">Nome da espécie</li>
+              <li class="fragment">Localidade</li>
+              <li class="fragment">Data</li>
+              <li class="fragment">Diversos descritores de qualidade</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Dados de biodiversidade</h3>
+            <h4>Ocorrência</h4>
+            <p><a href="https://br.biodiversity.cloud/elasticsearch/dwc/occurrence/_mapping">/elasticsearch/dwc/occurrence/_mapping</a></p>
+            <p class="fragment">~60 campos</p>
+          </section>
+
+          <section>
+            <h3>Dados de biodiversidade</h3>
+            <h4>Avaliação</h4>
+            <ul>
+              <li class="fragment">Agregações por: novos, antigos ou todos</li>
+              <li class="fragment">Contagem</li>
+              <li class="fragment">Área total ocupada</li>
+              <li class="fragment">Clusters de ocupação</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Dados de biodiversidade</h3>
+            <h4>Avaliação</h4>
+            <p><a href="https://br.biodiversity.cloud/elasticsearch/dwc/analysis/_mapping">/elasticsearch/dwc/analysis/_mapping</a></p>
+            <p class="fragment">~120 campos</p>
+          </section>
+
+          <section>
+            <h3>Dados de biodiversidade</h3>
+            <img src="images/method.png" alt="Método cientifico" />
+          </section>
+
+          <section>
+            <h3>Dados de biodiversidade</h3>
+            <img src="images/kib1.png" alt="Método cientifico" />
+          </section>
+
+          <section>
+            <h3>Dados de biodiversidade</h3>
+            <img src="images/kib2.png" alt="Método cientifico" />
+          </section>
+
+          <section>
+            <h2>Números</h2>
+            <ul>
+              <li class='fragment'>50k nomes</li>
+              <li class='fragment'>18M ocorrências</li>
+              <li class='fragment'>10 Análise por nome (500k análises)</li>
+              <li class='fragment'>Coleta: 1 horas</li>
+              <li class='fragment'>Análise: 6 horas</li>
+              <li class='fragment'>Diariamente refeito</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Infra e Tech</h2>
+            <ul>
+              <li class="fragment">Um VPS</li>
+              <li class="fragment">4 núcleos</li>
+              <li class="fragment">8GB de RAM</li>
+              <li class="fragment">ES com 4GB</li>
+              <li class="fragment">~3k linhas de Clojure</li>
+              <li class="fragment">6 containers docker</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Números mundiais</h2>
+            <img src="images/gbif.png" alt="GBIF" />
+          </section>
+
         </section>
 
-        <section>
-          <h3>Problem</h3>
-          <p>All that puts more pressure on Ops.</p>
-        </section>
-
-        <section>
-          <section>
-            <h2>Dev Ops</h2>
-            <p><small>Beyond docker.</small></p>
-          </section>
-          <section>
-            <h3>docker-compose</h3>
-            <pre><code>etcd:
-    image: coreos/etcd
-    name: etcd
-    ports:
-       - "4001:4001"
-logstash:
-    image: diogok/logstash
-    name: logstash
-    ports:
-        - 80
-        - 9514
-proxy:
-    image: diogok/proxy-docker
-    name: proxy
-    environment:
-        ROOT_APP: "connect"
-    ports:
-        - "80:80"
-        - "9001"
-    links:
-        - "etcd:etcd"
-connect:
-    image: cncflora/connect
-    name: connect
-    ports:
-        - "8080"
-        - "9001"
-    volumes:
-        - "/var/floraconnect:/var/floraconnect:rw"
-    environment:
-        PROXY: "/connect"
-dwc_services:
-    image: cncflora/dwc-services
-    name: dwc_services
-    ports:
-        - "8080"
-        - "9001"
-    environment:
-        PROXY: "/dwc_services"
-floradata:
-    image: cncflora/floradata
-    name: floradata
-    ports:
-        - "80"</code></pre>
-            <p>Orchestrate your container.</p>
-          </section>
-          <section>
-            <h3>ETCD</h3>
-            <p>Share configuration REST server.</p>
-          </section>
-          <section>
-            <h3>Nginx</h3>
-            <p>Proxy to the container network</p>
-            <pre><code>http {
-    server {
-        listen 80;
-
-        # Proxying the connections connections, data come from ETCD
-        <% for @app in @data.values %>
-        location /<%= @app['name'] %>/ {
-            rewrite /<%= @app['name'] %>/(.*) /$1 break;
-            proxy_pass         http://<%= @app['networksettings']['ipaddress'] %>:<%= @app['networksettings']['ports'].keys.first.gsub("/tcp","") %>;
-            proxy_redirect     default;
-            proxy_set_header   Host $host;
-            proxy_set_header   X-Real-IP $remote_addr;
-            proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header   X-Forwarded-Host $server_name;
-        }
-        <% end %>
-    }
-}</code></pre>
-          </section>
-          <section>
-            <h3>Supervisord</h3>
-            <img src="images/supervisord.png" />
-            <p>SUpervvisor the processes</p>
-          </section>
-          <section>
-            <h3>Logstash</h3>
-            <img src="images/logstash.png"  />
-            <p>Get those logs in a nice view</p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3>Next step:</h3>
-            <h2><s>Continuous integration</s></h2>
-            <h2>Continuous delivery</h2>
-          </section>
-          <section>
-              <p>TODO</p>
-              <img src="" alt="" />
-          </section>
-        </section>
 
 				<section>
-					<h1>THE END</h1>
-          <h3> <a href="http://diogok.net">http://diogok.net</a> </h3>
+					<h1>É isso!</h1>
 				</section>
 
 			</div>
